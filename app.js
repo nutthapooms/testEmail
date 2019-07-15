@@ -6,7 +6,7 @@ var pug = require('pug');
 var port = 8520;
 
 app.set('views',__dirname+'/views');
-app.set('view engine','pug');
+app.set('view engine','ejs');
 
 mailer.extend(app,{
     from: 'no-reply@hotmail.com',
@@ -16,12 +16,12 @@ mailer.extend(app,{
     transportMethod: 'SMTP',
     auth:{
         user: 'poomsuteen@gmail.com',
-        pass: 'lpg6jwu33d'
+        pass: 
     }
 });
 
 app.get('/', function (req, res, next) {
-    app.mailer.send('email', {
+    app.mailer.send('email2', {
       to: 'nutthapoom.s@hotmail.com', // REQUIRED. This can be a comma delimited string just like a normal email to field. 
       subject: 'Test Email', // REQUIRED.
       otherProperty: 'Other Property' // All additional properties are also passed to the template as local variables.
